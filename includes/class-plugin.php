@@ -44,7 +44,7 @@ final class Plugin {
 			'\RealEstateAI\Frontend\Shortcodes',
 			'\RealEstateAI\Search\PropertySearch',
 			'\RealEstateAI\Subscriptions\SubscriptionManager',
-			'\RealEstateAI\Ai\AiManager',
+			'\RealEstateAI\AI\AiManager',
 			'\RealEstateAI\Gating\Gating',
 		);
 		foreach ( $components as $component ) {
