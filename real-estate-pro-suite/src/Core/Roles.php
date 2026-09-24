@@ -1,0 +1,2 @@
+<?php
+namespace RealEstatePro\Core;defined('ABSPATH')||exit;final class Roles{public static function register():void{add_role('re_agent','Agent',['read'=>true,'upload_property'=>true,'edit_own_property'=>true,'view_agent_dashboard'=>true]);add_role('re_customer','Customer',['read'=>true,'view_customer_dashboard'=>true]);if($a=get_role('administrator'))foreach(['manage_re_pro_suite','approve_properties','manage_re_pro_subscriptions','view_re_pro_analytics'] as $c)$a->add_cap($c);}}
