@@ -9,6 +9,6 @@ final class Plugin{
   add_action('init',[PostTypes::class,'register']);add_action('init',[Roles::class,'register']);
   (new Settings())->register();(new Rest())->register();(new Blocks())->register();(new Shortcodes())->register();(new PropertySearch())->register();(new SubscriptionManager())->register();(new AiManager())->register();(new Gating())->register();
   add_action('wp_enqueue_scripts',static function():void{wp_enqueue_style('re-pro-suite',RE_PRO_SUITE_URL.'assets/css/app.css',[],RE_PRO_SUITE_VERSION);wp_enqueue_script('re-pro-suite',RE_PRO_SUITE_URL.'assets/js/app.js',['jquery'],RE_PRO_SUITE_VERSION,true);wp_localize_script('re-pro-suite','rePro',['rest'=>esc_url_raw(rest_url('re-pro/v1/')),'nonce'=>wp_create_nonce('wp_rest'),'ajax'=>admin_url('admin-ajax.php'),'searchNonce'=>wp_create_nonce('re_pro_search')]);});
-  load_plugin_textdomain('re-pro-suite',false,dirname(plugin_basename(RE_PRO_SUITE_FILE)).'/languages');
+  load_plugin_textdomain('realestate-ai',false,dirname(plugin_basename(RE_PRO_SUITE_FILE)).'/languages');
  }
 }
