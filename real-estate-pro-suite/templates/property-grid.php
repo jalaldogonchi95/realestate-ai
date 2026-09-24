@@ -1,0 +1,1 @@
+<div class="re-pro-grid"><?php while($q->have_posts()):$q->the_post();?><article class="re-pro-card"><a href="<?php the_permalink();?>"><?php the_post_thumbnail('medium',['loading'=>'lazy']);?><h3><?php the_title();?></h3></a><div><?php echo esc_html(get_post_meta(get_the_ID(),'price',true));?></div></article><?php endwhile;wp_reset_postdata();?></div>
