@@ -4,7 +4,7 @@
  * Description: Subscription-based real estate SaaS platform for WordPress and WooCommerce.
  * Version: 1.0.0
  * Author: RealEstate Pro Suite
- * Text Domain: re-pro-suite
+ * Text Domain: realestate-ai
  * Domain Path: /languages
  * Requires at least: 6.5
  * Requires PHP: 8.2
