@@ -17,7 +17,7 @@ define( 'REAI_FILE', __FILE__ );
 define( 'REAI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'REAI_URL', plugin_dir_url( __FILE__ ) );
 define( 'REAI_BASENAME', plugin_basename( __FILE__ ) );
-if ( file_exists( REAI_PATH . 'vendor/autoload.php' ) ) { require_once REAI_PATH . 'vendor/autoload.php'; }
+require_once REAI_PATH . 'vendor/autoload.php';
 register_activation_hook( __FILE__, [ 'REAI_Activator', 'activate' ] );
 register_deactivation_hook( __FILE__, [ 'REAI_Deactivator', 'deactivate' ] );
 add_action( 'plugins_loaded', static function (): void { \RealEstateAI\Plugin::instance()->init(); } );
