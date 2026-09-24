@@ -1,0 +1,3 @@
+<?php
+namespace RealEstatePro\Api;defined('ABSPATH')||exit;
+final class Blocks{public function register():void{add_action('init',function(){register_block_type('re-pro/property-grid',['render_callback'=>fn()=>do_shortcode('[property-grid]')]);register_block_type('re-pro/property-search',['render_callback'=>fn()=>do_shortcode('[property-search]')]);register_block_type('re-pro/ai-assistant',['render_callback'=>fn()=>do_shortcode('[ai-assistant]')]);});}}
