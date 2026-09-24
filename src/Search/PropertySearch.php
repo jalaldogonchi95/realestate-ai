@@ -1,3 +1,0 @@
-<?php
-namespace RealEstatePro\Search;defined('ABSPATH')||exit;
-final class PropertySearch{public function register():void{add_action('wp_ajax_re_pro_search',[$this,'ajax']);add_action('wp_ajax_nopriv_re_pro_search',[$this,'ajax']);}public function ajax():void{check_ajax_referer('re_pro_search','nonce');$q=new \WP_Query(['post_type'=>'property','post_status'=>'publish','posts_per_page'=>12,'s'=>sanitize_text_field(wp_unslash($_POST['q']??''))]);$out=[];foreach($q->posts as $p)$out[]=['id'=>$p->ID,'title'=>get_the_title($p),'url'=>get_permalink($p),'price'=>get_post_meta($p->ID,'price',true),'thumbnail'=>get_the_post_thumbnail_url($p->ID,'medium')];wp_send_json_success($out);}}

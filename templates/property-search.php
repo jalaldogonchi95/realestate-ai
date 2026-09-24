@@ -1,1 +1,0 @@
-<form class="re-pro-search" data-nonce="<?php echo esc_attr(wp_create_nonce('re_pro_search'));?>"><input name="q" placeholder="جستجوی ملک"><button>جستجو</button></form><div class="re-pro-results re-pro-grid"></div>

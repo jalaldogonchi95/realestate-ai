@@ -1,9 +1,0 @@
-{
-  "name": "jalaldogonchi95/realestate-ai",
-  "description": "پلتفرم املاک با هوش مصنوعی",
-  "type": "wordpress-plugin",
-  "license": "GPL-2.0-or-later",
-  "require": {"php": ">=7.4", "firebase/php-jwt": "^6.0", "guzzlehttp/guzzle": "^7.0"},
-  "require-dev": {"phpunit/phpunit": "^9.0", "wp-coding-standards/wpcs": "^3.0"},
-  "autoload": {"psr-4": {"RealEstateAI\\\\": "includes/"}}
-}
