@@ -139,10 +139,33 @@ final class AiManager {
     }
 
     public function register_feature_routes(): void {
-        register_rest_route('re-pro/v1', '/ai/enhance/(?P<id>\d+)', [
+        register_rest_route('re-pro/v1', '/ai/enhance/(?P<id>\\d+)', [
             'methods' => 'POST',
             'callback' => function ($request) {
                 return rest_ensure_response($this->enhance_listing(get_current_user_id(), absint($request['id'])));
+            },
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            },
+        ]);
+
+        register_rest_route('re-pro/v1', '/ai/match/(?P<id>\\d+)', [
+            'methods' => 'POST',
+            'callback' => function ($request) {
+                $need = $request->get_json_params();
+                return rest_ensure_response($this->match_score(get_current_user_id(), absint($request['id']), is_array($need) ? $need : []));
+            },
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            },
+        ]);
+
+        register_rest_route('re-pro/v1', '/ai/price/(?P<id>\\d+)', [
+            'methods' => 'POST',
+            'callback' => function ($request) {
+                $body = $request->get_json_params();
+                $comparables = isset($body['comparables']) && is_array($body['comparables']) ? $body['comparables'] : [];
+                return rest_ensure_response($this->price_estimate(get_current_user_id(), absint($request['id']), $comparables));
             },
             'permission_callback' => function () {
                 return is_user_logged_in();
