@@ -18,6 +18,9 @@ define( 'REAI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'REAI_URL', plugin_dir_url( __FILE__ ) );
 define( 'REAI_BASENAME', plugin_basename( __FILE__ ) );
 
+require_once REAI_PATH . 'includes/class-activator.php';
+require_once REAI_PATH . 'includes/class-deactivator.php';
+
 if ( file_exists( REAI_PATH . 'vendor/autoload.php' ) ) {
 	require_once REAI_PATH . 'vendor/autoload.php';
 } else {
